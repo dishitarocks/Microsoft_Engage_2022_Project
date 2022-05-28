@@ -79,5 +79,5 @@
 3. Implementing collaborative filtering to create a hybrid recommendation model. 
 
 
-Thank you ! Microsoft Team for such a wonderful mentorship program ❤️
+Thank you Microsoft for such a wonderful mentorship program ❤️
 
