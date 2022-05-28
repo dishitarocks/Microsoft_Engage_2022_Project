@@ -74,10 +74,10 @@
  ###### NOTE: The port by default will be ```http://127.0.0.1:5000```
 
 ## 🚩 Future Scope:-
-1. Strengthening the algorithm further to increase accuracy 
-2. Generating daily song recommendation playlists
-3. Implementing collaborative filtering to create a hybrid recommendation model. 
+#### 1. Strengthening the algorithm further to increase accuracy 
+#### 2. Generating daily song recommendation playlists
+#### 3. Implementing collaborative filtering to create a hybrid recommendation model. 
 
 
-Thank you Microsoft for such a wonderful mentorship program ❤️
+## Thank you Microsoft for such a wonderful mentorship program ❤️
 
