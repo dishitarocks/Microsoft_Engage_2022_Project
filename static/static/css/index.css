@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: transparent;
+}
+
+h1,
+h2 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: 1;
+}
+
+body {
+    background-image: linear-gradient(to bottom right,hsl(259, 93%, 27%),hsla(281, 60%, 14%, 0.91),hsla(292, 100%, 21%, 0.78)), url('../../assets/bodyBackground.png');
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    color:white;
+    min-height:100vh;
+    padding-inline: 6.5rem;
+}
+
+.main_container {
+    min-height: 100vh;
+    border-inline: 1px solid hsl(0, 0%, 100%, 0.35);
+}
+
+.main_container__header {
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.header_text {
+    flex: 1;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.main_container__header__iconsContainerSpan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main_container__header__iconsContainerSpan__img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main_container__personSection,
+.main_container__playerSection {
+    padding: 40px 5px;
+    padding-bottom: 20px;
+    border-block: 1px solid hsl(0, 0%, 100%, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main_container__personSection__personName {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.main_container__personSection__personName p {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.personName__text {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.main_container__personSection__quotationPara {
+    font-size: 1.1rem;
+    line-height: 25px;
+}
+
+.main_container__personSection__exploreText,
+.main_container__playerSection__recomendedText {
+    margin-top: 2rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.main_container__songSection {
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-block: 1px solid hsl(0, 0%, 100%, 0.35);
+    cursor: pointer;
+}
+
+.main_container__songSection__songInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.songName {
+    flex: 1;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.songYear {
+    flex: 1;
+    font-size: 17.5px;
+    font-weight: 300;
+}
+
+.main__container__songSection__playPauseButtonSpan {
+    padding-inline-end: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.playPauseButton {
+    width: 45px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main_container__playerSection__songPlayer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_container__playerSection__songPlayer__nowPlaying {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main_container__playerSection__songPlayer__nowPlaying {
+    font-size: 1.25rem;
+}
+
+.songPlayer__songName {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.songName__text {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.main__container__playerSection__songPlayer__playPauseButtonSpan {
+    display: flex;
+    align-items: center;
+}
+
+.playerSection__songPlayer__playPauseButton {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main_container__playerSection__recomendedText {
+    font-size: 1.25rem;
+}
+
+.songProgressStatus {
+    width: 100%;
+    background-color: hsl(0, 0%, 100%, 0.35);
+    border-radius: 10px;
+}
+
+.songProgressBar {
+    width: 0;
+    height: 2.5px;
+    background-color: #FFFFFF;
+}

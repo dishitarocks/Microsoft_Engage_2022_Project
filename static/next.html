@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./static/css/index.css">
+    <title>MusicA</title>
+</head>
+
+<body>
+    <noscript>Please enable JavaScript to view this site.</noscript>
+    <!-- Body goes here -->
+    <div id="main_container" class="main_container">
+        <div class="main_container__header">
+            <h1 class="header_text" onclick="location.href='main.html'">MUSICA.</h1>
+            <span class="main_container__header__iconsContainerSpan">
+                <img src="./assets/searchIcon.svg" alt="Search" title="Search"
+                    class="main_container__header__iconsContainerSpan__img">
+                <img src="./assets/profileIcon.svg" alt="Profile" title="Profile"
+                    class="main_container__header__iconsContainerSpan__img">
+            </span>
+        </div>
+        <div class="main_container__playerSection">
+            <div class="main_container__playerSection__songPlayer">
+                <div class="main_container__playerSection__songPlayer__nowPlaying">
+                    <p class="main_container__playerSection__songPlayer__nowPlaying">Now Playing</p>
+                    <div class="songPlayer__songName">
+                        <h2 id="name" class="songName__text">Song Name Here</h2>
+                        <p id="duration" class="songTimer" id="songTimer">00 : 00</p>
+                    </div>
+                </div>
+                <span class="main__container__playerSection__songPlayer__playPauseButtonSpan">
+                    <img src="./assets/playButtonIcon.svg" alt="Play" title="Play"
+                        class="playerSection__songPlayer__playPauseButton"
+                        id="playerSection__songPlayer__playPauseButton" onclick="playerController();">
+                </span>
+            </div>
+            <div class="songProgressStatus">
+                <div class="songProgressBar" id="songProgressBar"></div>
+            </div>
+            <p class="main_container__playerSection__recomendedText">Recomended Songs</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="./static/js/index.js"></script>
+</body>
+
+</html>
+
+<script>
+    const params = new URLSearchParams(window.location.search)
+
+    const name = params.get('name')
+    const year = params.get('year')
+
+    const id = params.get('id')
+
+    fetch('/song?' + new URLSearchParams({ id }), { method: 'GET' }).then((resp) => resp.json()).then((song) => {
+        setCurrentSongDetails(song)
+
+        const name = Object.values(song.name)[0]
+        const year = Object.values(song.year)[0]
+
+        if (name && year) {
+            fetch('/predict?' + new URLSearchParams({
+                name: name,
+                year: year
+            }), { method: 'GET' }).then((resp) => resp.json()).then((songs) => {
+                createSongItems(songs)
+            })
+        }
+
+    })
+
+    function createSongItems (data) {
+        const mainContainer = document.getElementById('main_container')
+        const elem = document.createElement('div')
+        let innerHtml = ''
+        for (const d of data) {
+            const id = Object.keys(d.name)[0]
+            const name = Object.values(d.name)[0]
+            const year = Object.values(d.year)[0]
+            innerHtml += `<div class="main_container__songSection" onclick="location.href='next.html?id=${id}'">
+            <div class="main_container__songSection__songInfo">
+                <p class="songName">${name}</p>
+                <p class="songYear">Song Year: ${year}</p>
+            </div>
+            <span class="main__container__songSection__playPauseButtonSpan">
+                <img src="./assets/playButtonIcon.svg" alt="Play" title="Play" class="playPauseButton">
+            </span>
+        </div>
+        `
+        }
+        elem.innerHTML = innerHtml
+
+        mainContainer.append(elem)
+    }
+
+    function setCurrentSongDetails (song) {
+        const name = Object.values(song.name)[0]
+        const duration = parseInt(Object.values(song.duration_ms)[0])
+
+        document.getElementById('name').innerText = name
+        document.getElementById('duration').innerText = parseMillisecondsIntoReadableTime(duration)
+    }
+
+    function parseMillisecondsIntoReadableTime (milliseconds) {
+        //Get hours from milliseconds
+        var hours = milliseconds / (1000 * 60 * 60);
+        var absoluteHours = Math.floor(hours);
+        var h = absoluteHours > 9 ? absoluteHours : '0' + absoluteHours;
+
+        //Get remainder from hours and convert to minutes
+        var minutes = (hours - absoluteHours) * 60;
+        var absoluteMinutes = Math.floor(minutes);
+        var m = absoluteMinutes > 9 ? absoluteMinutes : '0' + absoluteMinutes;
+
+        //Get remainder from minutes and convert to seconds
+        var seconds = (minutes - absoluteMinutes) * 60;
+        var absoluteSeconds = Math.floor(seconds);
+        var s = absoluteSeconds > 9 ? absoluteSeconds : '0' + absoluteSeconds;
+
+
+        if (h > 0) {
+            return h + ':' + m + ':' + s;
+        }
+
+        return m + ':' + s;
+    }
+
+</script>

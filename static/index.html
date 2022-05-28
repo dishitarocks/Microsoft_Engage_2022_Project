@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./static/css/index.css">
+    <title>MusicA</title>
+</head>
+
+<body>
+    <noscript>Please enable JavaScript to view this site.</noscript>
+    <!-- Body goes here -->
+    <div id="main_container" class="main_container">
+        <div class="main_container__header">
+            <h1 class="header_text" onclick="location.href='main.html'">MUSICA.</h1>
+            <span class="main_container__header__iconsContainerSpan">
+                <img src="./assets/searchIcon.svg" alt="Search" title="Search"
+                    class="main_container__header__iconsContainerSpan__img">
+                <img src="./assets/profileIcon.svg" alt="Profile" title="Profile"
+                    class="main_container__header__iconsContainerSpan__img">
+            </span>
+        </div>
+        <div class="main_container__personSection">
+            <div class="main_container__personSection__personName">
+                <p>Hey!</p>&nbsp;<h2 class="personName__text">DISHITA</h2>
+            </div>
+            <p class="main_container__personSection__quotationPara">
+                If everyone started off the day singing just think how happy they'd be.
+            </p>
+            <p class="main_container__personSection__exploreText">Explore</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="./static/js/index.js"></script>
+</body>
+
+</html>
+
+<script>
+    fetch('/random', { method: 'GET' }).then((resp) => resp.json()).then((songs) => {
+        createSongItems(songs)
+    })
+
+    function createSongItems (data) {
+        const mainContainer = document.getElementById('main_container')
+        const elem = document.createElement('div')
+        let innerHtml = ''
+        for (const d of data) {
+            const id = Object.values(d.id)[0]
+            const name = Object.values(d.name)[0]
+            const year = Object.values(d.year)[0]
+            innerHtml += `<div class="main_container__songSection" onclick="location.href='next.html?id=${id}'">
+            <div class="main_container__songSection__songInfo">
+                <p class="songName">${name}</p>
+                <p class="songYear">Song Year: ${year}</p>
+            </div>
+            <span class="main__container__songSection__playPauseButtonSpan">
+                <img src="./assets/playButtonIcon.svg" alt="Play" title="Play" class="playPauseButton">
+            </span>
+        </div>
+        `
+        }
+        elem.innerHTML = innerHtml
+
+        mainContainer.append(elem)
+    }
+
+</script>
