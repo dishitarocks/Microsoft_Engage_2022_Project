@@ -52,7 +52,7 @@
   * Write the following command and press enter.
   
   ```
-    $ git clone https://yoursrepourl
+    $ git clone https://github.com/dishitarocks/Microsoft_Engage_2022_Project
   ```
     
  #### 2. Install packages
