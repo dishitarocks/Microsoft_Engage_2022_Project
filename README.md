@@ -16,7 +16,7 @@
 <img width=100% src="https://github.com/dishitarocks/Books/blob/cb1caa0c22404551120554015fcd7a6e6ea50a49/Useful%20Images/recommendor_screen2.jpeg">
 
 
-## 🔗 Project Demo Video: [Link to Video](https://youtu.be/Rpz_uXqAEF4)
+## 🔗 Project Demo Video: [Click here to watch the video](https://youtu.be/Rpz_uXqAEF4)
 #### Video link :   
 
 ## 🌐 Web flow
