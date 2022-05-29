@@ -10,26 +10,26 @@
 ### UI Glimpse of the App:
 
 #### Screen 01  
-<img width=100% src="https://github.com/dishitarocks/Books/blob/cb1caa0c22404551120554015fcd7a6e6ea50a49/Useful%20Images/recommendor_screen1.jpeg"> 
+<img width=100% src="https://github.com/dishitarocks/Microsoft_Engage_2022_Project/blob/1eaa001c9c4861403108f60a90770afa2709e93e/static/readme_image_assets/recommendor_screen1.jpeg"> 
 
 #### Screen 02 
-<img width=100% src="https://github.com/dishitarocks/Books/blob/cb1caa0c22404551120554015fcd7a6e6ea50a49/Useful%20Images/recommendor_screen2.jpeg">
+<img width=100% src="https://github.com/dishitarocks/Microsoft_Engage_2022_Project/blob/1eaa001c9c4861403108f60a90770afa2709e93e/static/readme_image_assets/recommendor_screen2.jpeg">
 
 
 ## 🔗 Project Demo Video: [Click here to watch the video](https://youtu.be/Rpz_uXqAEF4)
  
 ## 🌐 Web flow
-<img width=100% src="https://github.com/dishitarocks/Books/blob/3bde4702b5a346894f388a1f5c61d61d00fff317/Useful%20Images/web%20flow.png" >
+<img width=100% src="https://github.com/dishitarocks/Microsoft_Engage_2022_Project/blob/1eaa001c9c4861403108f60a90770afa2709e93e/static/readme_image_assets/Web%20Flow%20Diagram_Musica.png" >
 
 ## 🚩 Algorithm used: Cosine Similarity
 
 #### Cosine similarity is a metric used to measure how similar two items are. Mathematically it calculates the cosine of the angle between two vectors projected in a multidimensional space. Cosine similarity is advantageous when two similar documents are far apart by Euclidean distance(size of documents) chances are they may be oriented close together. The smaller the angle, higher the cosine similarity.
 
-<img width=100% src="https://github.com/dishitarocks/Books/blob/c38385fcbad6c22a1e1967cac1b610ff87db59e1/Useful%20Images/cosine2.jpeg" >
+<img width=100% src="https://github.com/dishitarocks/Microsoft_Engage_2022_Project/blob/1eaa001c9c4861403108f60a90770afa2709e93e/static/readme_image_assets/cosine_similarity_1.jpeg" >
 
 #### Cosine similarity has been used in the web app to implement content based filtering. Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback sklearn has the module ‘cosine_similarity’, which we'll use to compute the similarity between two vectors.
 
-<img width=100% src="https://github.com/dishitarocks/Books/blob/c38385fcbad6c22a1e1967cac1b610ff87db59e1/Useful%20Images/cosine1.png" >
+<img width=100% src="https://github.com/dishitarocks/Microsoft_Engage_2022_Project/blob/1eaa001c9c4861403108f60a90770afa2709e93e/static/readme_image_assets/cosine_similarity_2.png" >
 
 ##  🚩 Technologies used:
 
